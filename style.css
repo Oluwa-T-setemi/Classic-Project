@@ -211,6 +211,21 @@
           box-shadow: 0 0 10px rgb(0, 58, 0);
           width: 50%;
         }
+        .menu-bar .fa-xmark{
+            display: none;
+            color: white;
+            font-size: 30px;
+        }
+        #menu-bar:checked ~ .menu-bar .fa-bars {
+          display: none;
+        }
+        #menu-bar:checked ~ .menu-bar .fa-xmark {
+          display: inline;
+        }
+        .fa-bars{
+            color: white;
+            font-size: 30px;
+        }
         form button {
           width: 10%;
           background-color: transparent;
@@ -225,10 +240,6 @@
         .mobile-search{
             display: none;
         }
-        .fa-bars{
-            color: white;
-            font-size: 30px;
-        }
         @media (max-width: 768px) {
           .top-nav{
             display: none;
@@ -238,6 +249,7 @@
             padding:  15px;
             width: 100%;
           }
+        
           h1{
             color: white;
           }

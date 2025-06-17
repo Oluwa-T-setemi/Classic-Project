@@ -47,7 +47,7 @@
           <h1>ShopCart</h1>
         </div>
         <input type="checkbox" id="menu-bar" aria-label="Toggle menu" />
-        <label for="menu-bar" class="menu-bar"><i class="fa-solid fa-bars"></i></label>
+        <label for="menu-bar" class="menu-bar"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i></label>
         <div class="inner-nav">
           <ul>
             <li>
@@ -155,6 +155,7 @@
   const dropdown = document.querySelector('.categories');
   const account = document.querySelector('#account');
   const accountsDropdown = document.querySelector('.accounts');
+  const bars = document.querySelector('.fa-bars')
 
   if (form && otherLinks) {
     form.addEventListener('focusin', () => {
@@ -176,6 +177,7 @@
       accountsDropdown.style.display = account.checked ? 'flex' : 'none';
     });
   }
+
   
 </script>
 
