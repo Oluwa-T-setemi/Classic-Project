@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopCart</title>
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="top-nav">
+        <div class="inner-nav">
+          <p><i class="fas fa-phone"></i> +001234567890</p>
+          <p>Get 50% Off on Selected items <span class="seperator">|</span> Shop Now</p>
+          <ul>
+            <li>
+              <input type="checkbox" id="language" aria-controls="language-menu" />
+              <label for="language">Eng <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-up"></i></label>
+              <ul id="language-menu">
+                <li><a href="#">Eng US</a></li>
+                <li><a href="#">Eng UK</a></li>
+              </ul>
+            </li>
+            <li>
+              <input type="checkbox" id="location" aria-controls="location-menu" />
+              <label for="location">Location <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-up"></i></label>
+              <ul id="location-menu">
+                <li><a href="#">Nigeria</a></li>
+                <li><a href="#">United States</a></li>
+                <li><a href="#">United Kingdom</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <div class="logo-box">
+          <h1>ShopCart</h1>
+        </div>
+        <input type="checkbox" id="menu-bar" aria-label="Toggle menu" />
+        <label for="menu-bar" class="menu-bar"><img src="/images/icon-hamburger.svg" alt="Toggle menu"></label>
+        <div class="inner-nav">
+          <ul>
+            <li>
+              <input type="checkbox" id="categories" aria-controls="categories-menu" />
+              <label for="categories">Categories <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-up"></i></label>
+              <ul class="categories" id="categories-menu">
+                <li>
+                  <a href="#">
+                    <img src="/images/air_cushion.webp" alt="Furniture" height="80px" loading="lazy">
+                    <p>
+                      Furniture
+                      <span>240 items Available</span>
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="/images/dropdown_shoe.jpg" alt="Shoes" height="80px" loading="lazy">
+                    <p>
+                      Shoes
+                      <span>240 items Available</span>
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="/images/dropdown_bag.webp" alt="Bags" height="80px" loading="lazy">
+                    <p>
+                      Bags
+                      <span>240 items Available</span>
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="/images/dropdown_keyboard.webp" alt="Techs" height="80px" loading="lazy">
+                    <p>
+                      Techs
+                      <span>240 items Available</span>
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="/images/dropdown_travel_item.webp" alt="Travel Items" height="80px" loading="lazy">
+                    <p>
+                      Travel Items
+                      <span>240 items Available</span>
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="/images/dropdown_book.webp" alt="Books" height="80px" loading="lazy">
+                    <p>
+                      Books
+                      <span>240 items Available</span>
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="other-links">
+              <a href="#">Deals</a>
+            </li>
+            <li class="other-links">
+              <a href="#">What's New</a>
+            </li>
+            <li class="other-links">
+              <a href="#">Delivery</a>
+            </li>
+          </ul>
+          <form action="#">
+            <input type="text" placeholder="Search Product..." aria-label="Search products">
+            <button type="submit" aria-label="Submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          <ul>
+            <li>
+              <input type="checkbox" id="account" aria-controls="accounts-menu" />
+              <label for="account"><i class="fa-regular fa-user"></i> Accounts <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-up"></i></label>
+              <ul class="accounts" id="accounts-menu">
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Login</a></li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="fa-solid fa-cart-plus"></i> Cart</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <form action="#" class="mobile-search">
+      <input type="text" placeholder="Search Product..." aria-label="Search products">
+      <button type="submit" aria-label="Submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+
+
+    .
+  </header>
+</body>
+<script>
+  const form = document.querySelector('form');
+  const otherLinks = document.querySelectorAll('.other-links');
+  const categories = document.querySelector('#categories');
+  const dropdown = document.querySelector('.categories');
+  const account = document.querySelector('#account');
+  const accountsDropdown = document.querySelector('.accounts');
+
+  if (form && otherLinks) {
+    form.addEventListener('focusin', () => {
+      otherLinks.forEach(link => link.style.display = 'none');
+    });
+    form.addEventListener('focusout', () => {
+      otherLinks.forEach(link => link.style.display = '');
+    });
+  }
+
+  if (categories && dropdown) {
+    categories.addEventListener('change', () => {
+      dropdown.style.display = categories.checked ? 'grid' : 'none';
+    });
+  }
+
+  if (account && accountsDropdown) {
+    account.addEventListener('change', () => {
+      accountsDropdown.style.display = account.checked ? 'flex' : 'none';
+    });
+  }
+  
+</script>
+
+</html>
+
+
+
+
+
+
+
