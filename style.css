@@ -225,6 +225,10 @@
         .mobile-search{
             display: none;
         }
+        .fa-bars{
+            color: white;
+            font-size: 30px;
+        }
         @media (max-width: 768px) {
           .top-nav{
             display: none;
