@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/images/ChatGPT Image May 21, 2025, 12_33_55 PM.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+     <script src="https://kit.fontawesome.com/61d1fce2b3.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(185, 252, 185);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+        .container{
+            width: 50%;
+            height: 80%;
+        }
+        .sign-up-page{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .img-1{
+            height: 65%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 1000;
+        }
+        .img-2{
+            position: absolute;
+            left: 70%;
+            bottom: 0;
+        }
+        #signup-form{
+            width: 60%;
+            height: 50%;
+            background-color: white;
+            position: relative;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .form-holder{
+            width: 80%;
+            height: 20%;
+            /* background-color: purple; */
+            /* margin: 5px 0; */
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            border-bottom: thin solid #999;
+            position: relative;
+            /* padding-bottom: 2px; */
+        }
+        .form-holder:focus-within{
+           border-bottom: thin solid rgb(185, 252, 185); 
+        }
+        .fa-eye, .fa-eye-slash {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(35%);
+            cursor: pointer;
+        }
+        i{
+            color: #999;
+            margin-bottom: 5px;
+        }
+        input{
+            width: 100%;
+            height: 50%;
+            /* background-color: purple; */
+            padding-left: 20px;
+            outline: none;
+            border: none;
+            font-family: "Kumbh Sans", sans-serif;  
+        }
+        input::placeholder{
+            font-size: 16px;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+        /* button{
+            font-family: "Kumbh Sans", sans-serif;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: rgb(185, 252, 185);
+        } */
+         button {
+            padding: 10px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(185, 252, 185);
+            color: #999;
+            text-transform: uppercase;
+            font-family: "Muli-SemiBold";
+            font-size: 15px;
+            letter-spacing: 2px;
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden; 
+        }
+        button span {
+            position: relative;
+            z-index: 2; 
+        }
+        button:before, button:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: rgb(2, 93, 2);
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+            -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+            transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1); 
+        }
+        button:after {
+            -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s; 
+        }
+        button:hover:before, button:hover:after {
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); 
+        }
+        button:hover{
+            color: white;
+        }
+        p{
+            font-size: 15px;
+        }
+        .error-message{
+            font-size: 14px;
+            color: red;
+        }
+        @media (max-width: 1282px) {
+            .container{
+                width:70%;
+            }
+            .img-1{
+                height: 75%;
+            }
+            i{
+                margin-bottom: 7px;
+            } 
+        }
+        @media (max-width: 820px) {
+            .container{
+                width: 100%;
+            }
+            #signup-form{
+                width: 60%;
+            }
+            .img-1{
+                height: 50%;
+            }
+            .img-2{
+                height: 35%;
+                left: 65%;
+            }
+            i{
+                margin-bottom: 7px;
+            }
+        }
+        @media(max-width: 435px){
+            body{
+                background-color: white;
+            }
+            .container{
+                width: 100%;
+            }
+            .sign-up-page{
+                width: 100%;
+            }
+            #signup-form{
+                width: 100%;
+            }
+            .img-1, .img-2{
+                display: none;
+            }
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sign-up-page">
+        <form id="signup-form">
+            <h3>New Account?</h3>
+            <div class="error-message" id="error-message"></div>
+            <div class="form-holder">
+                <i class="fa-solid fa-envelope"></i>
+                <input
+                class="input"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+                /> 
+            </div>
+        
+            <div class="form-holder">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                class="input"
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+                />
+                <i class="fa-regular fa-eye"></i>
+                <i class="fa-regular fa-eye-slash"></i> 
+            </div>
+          <button type="submit" class="submit">
+            <span id="submit-text">Login</span>
+            <span id="submit-loader" style="display: none">Logging In<i class="fa-solid fa-spinner fa-spin" style="margin-left: 5px;"></i></span>
+          </button>
+          <p class="sign-in">
+             Don't have an account?
+             <a href="/sign_up.html">Sign Up</a>
+          </p>
+          <p>©2025 ShopCart. All Rights Reserved.</p>
+        </form>
+        <img src="/Images/image-2.png" alt="" class="img-2">
+      </div>
+    </div>
+
+
+
+
+    <!-- Axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!---- sweetalert cdn ---->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
+
+    <script>
+      const form = document.getElementById("signup-form");
+      const submitButton = document.querySelector(".submit");
+      const errorMessage = document.getElementById("error-message");
+      const emailInput = form.querySelector('input[name="email"]');
+      const password = form.querySelector('input[type="password"]')
+
+      function showError(message) {
+        errorMessage.textContent = message;
+        errorMessage.classList.add("show");
+        submitButton.disabled = true;
+      }
+
+      function clearError() {
+        errorMessage.textContent = "";
+        errorMessage.classList.remove("show");
+        submitButton.disabled = false;
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const passwordInput = document.querySelector('input[name="password"]');
+        const eyeIcon = document.querySelector('.fa-eye');
+        const eyeSlashIcon = document.querySelector('.fa-eye-slash');
+        eyeSlashIcon.style.display = 'none';
+
+        eyeIcon.addEventListener('click', function() {
+            passwordInput.type = 'text';
+            eyeIcon.style.display = 'none';
+            eyeSlashIcon.style.display = 'block';
+        });
+
+        eyeSlashIcon.addEventListener('click', function() {
+            passwordInput.type = 'password';
+            eyeIcon.style.display = 'block';
+            eyeSlashIcon.style.display = 'none';
+        });
+      });
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+
+
+        submitButton.disabled = true;
+        document.getElementById("submit-text").style.display = "none";
+        document.getElementById("submit-loader").style.display = "block";
+
+        axios
+          .post(
+            "https://core.hisend.hunnovate.com/api/v1/projects/shop_cart/auth/login?api_key=7cLG41V6vQV19gDy9w2ERhRx",
+            data
+          )
+          .then((response) => {
+            localStorage.setItem("token", response.data.data.token);
+            alert("Logged In Successfully!");
+            window.location.href = '/test.html';
+          })
+          .catch((error) => {
+            console.log(error.response);
+            showError(
+              error?.response?.data?.message ||
+                "Error occured while Logging Into user's account"
+            );
+          })
+          .finally(() => {
+            submitButton.disabled = false;
+            document.getElementById("submit-text").style.display = "block";
+            document.getElementById("submit-loader").style.display = "none";
+          });
+      });
+    </script>
+  </body>
+</html>
