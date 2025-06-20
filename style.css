@@ -607,40 +607,38 @@
           form{
             display: none;
           }
-           form {
+          form {
             width: 100%;
             margin: 10px 0;
+          }
+          form input{
+            padding: 15px;
           }
           form:focus-within {
             width: 100%;
           }
           .headphone-discount{
-            overflow: visible;
-            padding-top: 30px;
-            height: 70vh;
+            height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
           .inner-section{
             width: 100%;
             display: flex;
             justify-content: center;
+            align-items: center;
             text-align: center;
-            /* align-items: center; */
           }
           .inner-section .text-section p{
             padding: 0px 0px;
             padding-bottom: 20px;
           }
-          .circle{
-            width: 50%;
-            height: 60%;
-            top: 100%;
-            left: 0;
-            background-color: transparent; 
+          .inner-section .text-section a{
+            padding: 15px 80px;
           }
-          .circle img{
-            top: -92%;
-            left: 50%;
-            width: 240px;
+          .circle{
+            display: none;
           }
           .cta-section{
             display: none;
