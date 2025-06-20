@@ -619,6 +619,7 @@
           }
           .headphone-discount{
             height: 40vh;
+            border-top-right-radius: 80px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -631,8 +632,12 @@
             text-align: center;
           }
           .inner-section .text-section p{
-            padding: 0px 0px;
-            padding-bottom: 20px;
+            padding: 0px 15px;
+            padding-bottom: 30px;
+            font-size: 30px;
+          }
+          .inner-section .text-section span{
+            font-size: 18px;
           }
           .inner-section .text-section a{
             padding: 15px 80px;
