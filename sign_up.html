@@ -157,7 +157,9 @@
             color: white;
         }
         p{
-            font-size: 15px;
+            font-size: 14px;
+            padding: 2px 0;
+            color: #999;
         }
         .error-message{
             font-size: 14px;
@@ -295,7 +297,7 @@
     <!-- Axios cdn -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!---- sweetalert cdn ---->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <script>
@@ -304,6 +306,9 @@
       const errorMessage = document.getElementById("error-message");
       const emailInput = form.querySelector('input[name="email"]');
       const phoneInput = form.querySelector('input[name="phone"]');
+
+
+
 
       function showError(message) {
         errorMessage.textContent = message;
@@ -399,8 +404,15 @@
           )
           .then((response) => {
             localStorage.setItem("token", response.data.data.token);
-            alert("Account created successfully!");
-            window.location.href = '/test.html';
+                Swal.fire({
+                title: 'success',
+                text: 'Registration Successful',
+                icon: 'success',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                window.location.href = '/test.html';
+              })
+            
           })
           .catch((error) => {
             console.log(error.response);

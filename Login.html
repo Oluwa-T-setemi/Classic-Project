@@ -165,7 +165,9 @@
             color: white;
         }
         p{
-            font-size: 15px;
+            font-size: 14px;
+            padding: 2px 0;
+            color: #999;
         }
         .error-message{
             font-size: 14px;
@@ -251,7 +253,7 @@
     <!-- Axios cdn -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!---- sweetalert cdn ---->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <script>
@@ -310,9 +312,15 @@
           )
           .then((response) => {
             localStorage.setItem("token", response.data.data.token);
-            alert("Logged In Successfully!");
-            window.location.href = '/test.html';
-          })
+                Swal.fire({
+                title: 'success',
+                text: 'Logged In Successfully',
+                icon: 'success',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                window.location.href = '/test.html';
+              })
+          })  
           .catch((error) => {
             console.log(error.response);
             showError(
