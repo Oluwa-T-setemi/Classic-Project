@@ -10,7 +10,8 @@
         }
         header {
           width: 100%;
-          min-height: 60vh;
+          min-height: 10vh;
+          /* background-color: aqua; */
         }
         .top-nav {
           background-color: rgb(2, 93, 2);
@@ -28,7 +29,7 @@
           font-family: "Manrope", sans-serif;
         }
         .bottom-nav .inner-nav{
-            width: 85%;
+          width: 85%;
             /* background-color: red; */
         }
         .top-nav p {
@@ -96,7 +97,7 @@
           font-size: 14px;
         }
         ul li ul li:hover a{
-            color: white;
+          color: white;
         }
         input:checked + label + ul {
           opacity: 1;
@@ -131,7 +132,18 @@
           padding: 5px;
           gap: 8px;
           width: 500%;
-          margin-top: 10px;
+          margin-top: 18px;
+          animation: categories 0.3s ease-in-out;
+        }
+        @keyframes categories{
+          0%{
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          100%{
+            opacity: 1;
+            transform: translateY(0px);
+          }
         }
         .categories li {
           margin: 0;
@@ -172,6 +184,7 @@
           width: 100%;
           padding: 5px;
           gap: 3px;
+          animation: categories 0.3s ease-in-out;
         }
         .accounts li {
           width: 100%;
@@ -212,9 +225,9 @@
           width: 50%;
         }
         .menu-bar .fa-xmark{
-            display: none;
-            color: white;
-            font-size: 30px;
+          display: none;
+          color: white;
+          font-size: 30px;
         }
         #menu-bar:checked ~ .menu-bar .fa-bars {
           display: none;
@@ -223,8 +236,8 @@
           display: inline;
         }
         .fa-bars{
-            color: white;
-            font-size: 30px;
+          color: white;
+          font-size: 30px;
         }
         form button {
           width: 10%;
@@ -238,42 +251,198 @@
           display: none;
         }
         .mobile-search{
-            display: none;
+          display: none;
         }
         .headphone-discount{
-            width: 80%;
-            height: 20%;
-            background-color: 90%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            background-color: rgba(246, 247, 232, 0.73);
-            border-radius: 15px;
+          width: 100%;
+          height: 60vh;
+          background-color: 90%;
+          display: flex;
+          justify-content: center;
+          background: 
+          url('/images/bg-pattern-intro-desktop.svg') no-repeat center center,
+          linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+          border-bottom-left-radius: 80px;
+          background-position: center;
+          font-family: "Kumbh Sans", sans-serif;
+          overflow: hidden;
+          position: relative;
         }
-        .headphone-discount img{
-            width: 40%;
+        .inner-section{
+          width: 80%;
+          height: 100%;
         }
-        .headphone-discount .text{
-            width: 50%;
-            padding: 50px;
-            font-family: "Kumbh Sans", sans-serif;
-            font-size: 30px;
-            /* background-color: yellow; */
+        .inner-section .text-section p{
+          font-size: 40px;
+          font-weight: 600;
+          padding: 40px 0;
+          padding-right: 600px;
+          color: rgb(2, 93, 2);
         }
-        .headphone-discount button{
-            padding: 10px 20px;
-            margin: 20px 0;
-            border-radius: 20px;
-            border: none;
-            background-color: rgb(2, 93, 2);
-            color: white;
-            font-family: "Kumbh Sans", sans-serif;
-            cursor: pointer;
+        .inner-section span{
+          font-size: 20px;
+          font-weight: 500;
         }
-        .headphone-discount button:hover{
-            background-color: white;
-            color: rgb(2, 93, 2);
-            box-shadow: 0 0 10px rgb(2, 93, 2);
+        .inner-section a{
+          padding:15px;
+          border-radius: 30px;
+          text-decoration: none;
+          background-color: rgb(2, 93, 2);
+          color: white;
+          overflow: hidden;
+        }
+        .circle{
+          width: 700px;
+          height: 700px;
+          left: 65%;
+          top: 5%;
+          border-radius: 50%;
+          background-color: rgb(2, 93, 2);
+          position: absolute;
+        }
+        .circle img{
+          position: absolute;
+          z-index: 999;
+          width: 300px;
+          left: 20%;
+          animation: headerImg 0.6s linear;
+        }
+        .text-section{
+          animation: textSection 0.6s linear;
+        }
+        @keyframes headerImg {
+          0%{
+            opacity: 0;
+            transform: translateY(-100px);
+          }
+          100%{
+            opacity: 1;
+            transform: translateY(0px);
+          }
+        }
+        @keyframes textSection {
+          0%{
+            opacity: 0;
+            transform: translateX(-100px);
+          }
+          100%{
+            opacity: 1;
+            transform: translateX(0px);
+          }
+        }
+        .cta-section{
+          width: 100%;
+          height: 50vh;
+          margin-top: 30px;
+          font-family: "Kumbh Sans", sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          /* background-color: blue; */
+        }
+        .categories-cards{
+          width: 100%;
+          height: 80%;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          column-gap: 10px;
+          margin-top: 20px;
+          /* background-color: red; */
+        }
+        .categories-cards .card:nth-child(1){
+          background: url(/Images/card_furniture.avif);
+          background-position: center;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          font-size: 22px;
+          font-weight: 500;
+          color: black;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        .categories-cards .card:nth-child(2){
+          background: url(/Images/card_shoe.avif);
+          background-position: center;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          font-size: 22px;
+          font-weight: 500;
+          color: black;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        .categories-cards .card:nth-child(3){
+          background: url(/Images/card_bag.avif);
+          background-position: center;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          font-size: 22px;
+          font-weight: 500;
+          color: black;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        .categories-cards .card:nth-child(4){
+          background: url(/Images/card_tech.avif);
+          background-position: center;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          font-size: 22px;
+          font-weight: 500;
+          color: black;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        .categories-cards .card:nth-child(5){
+          background: url(/Images/card_travel.jpg);
+          background-position: center;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          font-size: 22px;
+          font-weight: 500;
+          color: black;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        .categories-cards .card:nth-child(6){
+          background: url(/Images/card_book.avif);
+          background-position: center;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          font-size: 22px;
+          font-weight: 500;
+          color: black;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        .text-gradient{
+          width: 100%;
+          height: 20%;
+          padding: 0 10px;
+          display: flex;
+          align-items: center;
+          background: linear-gradient(transparent, #777676);
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+        .categories-cards .card{
+          transition: transform 0.3s ease, box-shadow 0.3s ease
+        }
+        .categories-cards .card:hover {
+          box-shadow: 0 0 10px #999;
+          transform: translateY(-10px);
         }
         @media (max-width: 768px) {
           .top-nav{
@@ -326,6 +495,7 @@
           .bottom-nav ul {
             flex-direction: column;
             width: 100%;
+            
           }
           .bottom-nav ul li {
             margin: 5px 0;
@@ -445,32 +615,34 @@
             width: 100%;
           }
           .headphone-discount{
-            flex-direction: column-reverse;
-            width: 90%;
-            padding: 20px;
-            gap: 15px;
+            overflow: visible;
+            padding-top: 30px;
+            height: 70vh;
           }
-          .headphone-discount .text{
+          .inner-section{
             width: 100%;
-            padding: 0;
             display: flex;
-            align-items: center;
             justify-content: center;
-            flex-direction: column;
-            gap: 15px;
-          }
-          .headphone-discount .text h1{
-            color: rgb(66, 66, 66);
-            font-size: 20px;
-            font-weight: 500;
             text-align: center;
-            padding: 0 10px;
+            /* align-items: center; */
           }
-          .headphone-discount button{
-            width: 80%;
-            margin: 0 auto;
+          .inner-section .text-section p{
+            padding: 0px 0px;
+            padding-bottom: 20px;
           }
-          .headphone-discount img{
-            width: 100%;
+          .circle{
+            width: 50%;
+            height: 60%;
+            top: 100%;
+            left: 0;
+            background-color: transparent; 
+          }
+          .circle img{
+            top: -92%;
+            left: 50%;
+            width: 240px;
+          }
+          .cta-section{
+            display: none;
           }
         }

@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/Images/logo.jpg" type="image/x-icon">
 </head>
 <body>
   <header>
@@ -24,7 +25,7 @@
           <ul>
             <li>
               <input type="checkbox" id="language" aria-controls="language-menu" />
-              <label for="language">Eng <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-up"></i></label>
+              <label for="language"> Eng <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-up"></i></label>
               <ul id="language-menu">
                 <li><a href="">Eng US</a></li>
                 <li><a href="">Eng UK</a></li>
@@ -44,7 +45,7 @@
       </div>
       <div class="bottom-nav">
         <div class="logo-box">
-          <h1>ShopCart</h1>
+          <img src="/Images/logo.jpg" alt="" width="60px" height="60px" style="border-radius: 10px;">
         </div>
         <input type="checkbox" id="menu-bar" aria-label="Toggle menu" />
         <label for="menu-bar" class="menu-bar"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i></label>
@@ -58,7 +59,7 @@
                   <a href="test.html">
                     <img src="/images/air_cushion.webp" alt="Furniture" height="80px" loading="lazy">
                     <p>
-                      Furniture
+                      Furnitures
                       <span>240 items Available</span>
                     </p>
                   </a>
@@ -85,7 +86,7 @@
                   <a href="">
                     <img src="/images/dropdown_keyboard.webp" alt="Techs" height="80px" loading="lazy">
                     <p>
-                      Techs
+                      Electronics
                       <span>240 items Available</span>
                     </p>
                   </a>
@@ -128,7 +129,7 @@
           <ul>
             <li>
               <input type="checkbox" id="account" aria-controls="accounts-menu" />
-              <label for="account"><i class="fa-regular fa-user"></i> Accounts <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-up"></i></label>
+              <label for="account"><i class="fa-regular fa-user"></i> Account <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-up"></i></label>
               <ul class="accounts" id="accounts-menu">
                 <li><a href="sign_up.html">Sign Up</a></li>
                 <li><a href="Login.html">Login</a></li>
@@ -143,17 +144,87 @@
       <input type="text" placeholder="Search Product..." aria-label="Search products">
       <button type="submit" aria-label="Submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
-
-
-    <div class="headphone-discount">
-      <div class="text">
-        <h1>Grab Upto 50% Off on Selected headphone</h1>
-        <button>Buy Now</button>
-      </div>
-      <img src="/Images/image.jpg" alt="">
-    </div>
   </header>
+
+  <div class="headphone-discount">
+     <div class="inner-section">
+      <div class="text-section">
+        <p>
+        Affordable Luxury Delivered to your Doorstep. <br>
+        <span>Your One-Stop Shop for All Essentials</span>
+        </p>
+        <a href="">Shop Now</a>
+      </div>
+      <div class="circle"><img src="/Images/Header image.png" alt=""></div>
+     </div> 
+  </div>
+
+  <div class="cta-section">
+    <div class="inner-section">
+      <h1>Our Categories</h1>
+      <div class="categories-cards">
+        <div class="card">
+          <div class="text-gradient">
+            <p>Furnitures</p>
+          </div>
+        </div>
+        <div class="card" style="background-color: black;">
+          <div class="text-gradient">
+            <p>Shoes</p>
+          </div>
+        </div>
+        <div class="card" style="background-color: orange;">
+          <div class="text-gradient">
+            <p>Bags</p>
+          </div>
+        </div>
+        <div class="card" style="background-color:  purple;">
+          <div class="text-gradient">
+            <p>Electronics</p>
+          </div>
+        </div>
+        <div class="card" style="background-color: brown;">
+          <div class="text-gradient">
+            <p>Travel Items</p>
+          </div>
+        </div>
+        <div class="card" style="background-color: green;">
+          <div class="text-gradient">
+            <p>Books</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
 <script>
   const form = document.querySelector('form');
   const otherLinks = document.querySelectorAll('.other-links');
