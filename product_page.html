@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Steezy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,6 +14,156 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/Images/logo.jpg" type="image/x-icon">
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .page_location{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .page_location p{
+        font-size: 15px;
+        color: #999;
+    }
+    .page_location span{
+        color: black;
+    }
+    .product-section{
+        width: 80%;
+        height: 80vh;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+        font-family: "Kumbh Sans", sans-serif;
+    }
+    .product-image{
+        display: grid;
+        grid-template-rows: 3fr 1fr;
+        row-gap: 10px;
+        padding: 20px;
+    }
+    .main-image{
+        background: url(/Images/Tech_items/dj_headphones_0ne.webp);
+        background-position: center;
+        background-size: contain;
+    }
+    .other-images{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 10px;
+    }
+    .image img{
+        width: 100%;
+        cursor: pointer;
+    }
+    .selected{
+      border: 2px groove rgb(4, 125, 4);
+    } 
+    .product-discription{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .product-discription h1{
+        font-size: 24px;
+    }
+    .description{
+        font-size: 15px;
+    }
+    .price{
+        font-size: 23px;
+    }
+    .colors{
+        width: 40%;
+        height: 12%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 10px;
+        padding: 10px 0;
+    }
+    .colors .color{
+        background-color: pink;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .colors .color:nth-child(1){
+        background-color: silver;
+    }
+    .colors .color:nth-child(2){
+        background-color: rgb(2, 160, 227);
+    }
+    .colors .color:nth-child(3){
+        background-color: rgba(59, 198, 112, 0.844);
+    }
+    .colors .color:nth-child(4){
+        background-color: rgba(255, 174, 188, 0.873);
+    }
+    .color-text{
+        margin-bottom: -10px;
+    }
+    button{
+        font-family: "Kumbh Sans", sans-serif;
+        border-radius: 5px;
+    }
+    .quantity{
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+        margin: 20px 0;
+        border: none;
+        color: rgb(4, 125, 4);
+        background-color: transparent;
+    }
+    .quantity .increase, .quantity .decrease{
+        cursor: pointer;
+    }
+    .buy_now, .cart{
+        padding: 8px 25px;
+        cursor: pointer;
+        border: none;
+        background-color: rgb(4, 125, 4);
+        color: white;
+    }
+    .button-container{
+        display: flex;
+        gap: 15px;
+    }
+    .buy_now:hover, .cart:hover{
+        background-color: white;
+        color: rgb(4, 125, 4);
+        box-shadow: 0 0 10px rgb(4, 125, 4) ;
+    }
+    label{
+        font-size: 16px;
+    }
+    .postal{
+        display: block;
+        margin-top: -15px;
+        width: 55%;
+        padding: 3px;
+        border: none;
+        caret-color: black;
+        cursor: default;
+        border-bottom: thin solid #999;
+    }
+    .postal::placeholder{
+        font-size: 14px;
+    }
+    .return{
+        font-size: 16px;
+    }
+    .return a{
+        font-size: 16px;
+    }
+
+</style>
 <body>
   <header>
     <nav>
@@ -127,14 +276,7 @@
             <button type="submit" aria-label="Submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
           <ul>
-            <li>
-              <input type="checkbox" id="account" aria-controls="accounts-menu" />
-              <label for="account"><i class="fa-regular fa-user"></i> Account <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-up"></i></label>
-              <ul class="accounts" id="accounts-menu">
-                <li><a href="sign_up.html">Sign Up</a></li>
-                <li><a href="Login.html">Login</a></li>
-              </ul>
-            </li>
+            <li><a href="">Logout</a></li>
             <li><a href=""><i class="fa-solid fa-cart-plus"></i> Cart</a></li>
           </ul>
         </div>
@@ -146,61 +288,87 @@
     </form>
   </header>
 
-  <div class="headphone-discount">
-     <div class="inner-section">
-      <div class="text-section">
-        <p>
-        Affordable Luxury Delivered to your Doorstep. <br>
-        <span>Your One-Stop Shop for All Essentials</span>
-        </p>
-        <a href="#title">Shop Now</a>
-      </div>
-      <div class="circle"><img src="/Images/Header image.png" alt=""></div>
-     </div> 
+  <div class="page_location">
+    <p>Electronics / Headphones / <span>Wireless DJ Headphones</span></p>
   </div>
 
-  <div class="cta-section">
-    <div class="inner-section">
-      <h1 class="title">Our Categories</h1>
-      <div class="categories-cards">
-        <div class="card">
-          <div class="text-gradient">
-            <p>Furnitures</p>
-          </div>
+
+  <div class="product-section">
+    <div class="product-image">
+        <div class="main-image">
         </div>
-        <div class="card" style="background-color: black;">
-          <div class="text-gradient">
-            <p>Shoes</p>
-          </div>
+        <div class="other-images">
+            <div class="image">
+                <img src="/Images/Tech_items/dj_headphones_0ne.webp" alt="">
+            </div>
+            <div class="image">
+                <img src="/Images/Tech_items/dj_headphones_two.webp" alt="">
+            </div>
+            <div class="image">
+                <img src="/Images/Tech_items/dj_headphones_three.webp" alt="">
+            </div>
+            <div class="image">
+                <img src="/Images/Tech_items/dj_headphones_four.webp" alt="">
+            </div>
         </div>
-        <div class="card" style="background-color: orange;">
-          <div class="text-gradient">
-            <p>Bags</p>
-          </div>
+    </div>
+
+    <div class="product-discription">
+        <h1>Wireless DJ Headphones</h1>
+
+        <p class="description">
+            Wireless DJ Headphones With 5.3 Chip, Large Capacity Battery, 200 Hours Of Playback Time, Comfortable Protein Ear Cushions, 360° Surround Sound, Noise-canceling Voice Calls, Volume Control, Wireless Connection, And Foldable Design.
+        </p>
+
+        <span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+                <span class="review-count">(666)</span>
+            </span>
+
+        <p class="price">&#8358 00.00</p>
+
+
+        <p class="color-text">Choose a color
+        <div class="colors">
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
         </div>
-        <div class="card" style="background-color:  purple;">
-          <div class="text-gradient">
-            <p>Electronics</p>
-          </div>
+        </p>
+
+        <button class="quantity">
+            <span class="decrease">-</span>
+            <span class="amount">1</span>
+            <span class="increase">+</span>
+        </button>
+
+        <div class="button-container">
+            <button class="buy_now">Buy Now</button>
+            <button class="cart">Add to cart</button>
         </div>
-        <div class="card" style="background-color: brown;">
-          <div class="text-gradient">
-            <p>Travel Items</p>
-          </div>
-        </div>
-        <div class="card" style="background-color: green;">
-          <div class="text-gradient">
-            <p>Books</p>
-          </div>
-        </div>
-      </div>
+
+        <label>
+            <i class="fa-solid fa-truck"></i>
+            Free Delivery
+        </label>
+        <input type="" placeholder="Enter your Postal code for delivery Availability" class="postal">
+
+        <p class="return">
+            <i class="fa-solid fa-book"></i>  
+            Return Delivery
+            <a href="">details.</a>
+        </p>
     </div>
   </div>
 
-
   <div class="flash-sales" id="title">
     <div class="inner-section">
-      <h1 class="title">Best-Selling Items</h1>
+      <h1 class="title">Explore other Interests</h1>
       <div class="item-cards">
 
         <div class="cards">
@@ -398,218 +566,6 @@
     </div>
 </div>
 
-  <div class="flash-sales">
-    <div class="inner-section">
-      <h1 class="title">Flash Sales</h1>
-      <div class="item-cards">
-
-        <div class="cards">
-          <img src="/Images/Travel_items/translator.webp" alt="">
-          <p class="item-name">
-            Languages Translator Device
-          </p>
-          <p class="price">
-            &#8358 00.00 
-            <span>&#8358 00.00</span>
-          </p>
-          <span>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="review-count">(666)</span>
-          </span>
-          <button>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-
-        <div class="cards">
-          <img src="/Images/Tech_items/zealot_speaker.webp" alt="">
-          <p class="item-name">
-            Languages Translator Device
-          </p>
-          <p class="price">
-            &#8358 00.00 
-            <span>&#8358 00.00</span>
-          </p>
-          <span>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="review-count">(666)</span>
-          </span>
-          <button>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-
-        <div class="cards">
-          <img src="/Images/dropdown_bag.webp" alt="">
-          <p class="item-name">
-            Languages Translator Device
-          </p>
-          <p class="price">
-            &#8358 00.00 
-            <span>&#8358 00.00</span>
-          </p>
-          <span>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="review-count">(666)</span>
-          </span>
-          <button>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-
-        <div class="cards">
-          <img src="/Images/dropdown_shoe.jpg" alt="">
-          <p class="item-name">
-            Languages Translator Device
-          </p>
-          <p class="price">
-            &#8358 00.00 
-            <span>&#8358 00.00</span>
-          </p>
-          <span>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="review-count">(666)</span>
-          </span>
-          <button>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-
-        <div class="cards">
-          <img src="/Images/dropdown_Keyboard.webp
-          " alt="">
-          <p class="item-name">
-            Languages Translator Device
-          </p>
-          <p class="price">
-            &#8358 00.00 
-            <span>&#8358 00.00</span>
-          </p>
-          <span>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="review-count">(666)</span>
-          </span>
-          <button>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-
-        <div class="cards">
-          <img src="/Images/Bag_items/faux_handbag.webp" alt="">
-          <p class="item-name">
-            Languages Translator Device
-          </p>
-          <p class="price">
-            &#8358 00.00 
-            <span>&#8358 00.00</span>
-          </p>
-          <span>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="review-count">(666)</span>
-          </span>
-          <button>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-
-        <div class="cards">
-          <img src="/Images/Travel_items/translator.webp" alt="">
-          <p class="item-name">
-            Languages Translator Device
-          </p>
-          <p class="price">
-            &#8358 00.00 
-            <span>&#8358 00.00</span>
-          </p>
-          <span>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="review-count">(666)</span>
-          </span>
-          <button>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-
-        <div class="cards">
-          <img src="/Images/Travel_items/translator.webp" alt="">
-          <p class="item-name">
-            Languages Translator Device
-          </p>
-          <p class="price">
-            &#8358 00.00 
-            <span>&#8358 00.00</span>
-          </p>
-          <span>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="review-count">(666)</span>
-          </span>
-          <button>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-
-        <div class="cards">
-          <img src="/Images/Travel_items/translator.webp" alt="">
-          <p class="item-name">
-            Languages Translator Device
-          </p>
-          <p class="price">
-            &#8358 00.00 
-            <span>&#8358 00.00</span>
-          </p>
-          <span>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="review-count">(666)</span>
-          </span>
-          <button>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-
-        <div class="cards">
-          <img src="/Images/Travel_items/translator.webp" alt="">
-          <p class="item-name">
-            Languages Translator Device
-          </p>
-          <p class="price">
-            &#8358 00.00 
-            <span>&#8358 00.00</span>
-          </p>
-          <span>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="review-count">(666)</span>
-          </span>
-          <button>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
-        </div>
-
-
-      </div>
-    </div>
-  </div>
-  
-
 
 <footer>
 <svg class="my-svg" viewBox="0 0 999 174" xmlns="http://www.w3.org/2000/svg">
@@ -630,29 +586,7 @@
 
 </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
-
 <script>
   const form = document.querySelector('form');
   const otherLinks = document.querySelectorAll('.other-links');
@@ -683,14 +617,46 @@
     });
   }
 
-  
+  const mainImage = document.querySelector('.main-image');
+  const thumbnails = document.querySelectorAll('.other-images img');
+
+  thumbnails.forEach(img => {
+      img.addEventListener('click', () => {
+          document.querySelectorAll('.image').forEach(div => div.classList.remove('selected'));
+          img.parentElement.classList.add('selected');
+          mainImage.style.backgroundImage = `url(${img.src})`;
+      });
+  });
+
+  const colors = document.querySelectorAll('.color');
+
+  colors.forEach(itemColor => {
+    itemColor.addEventListener('click', (e) => {
+      colors.forEach(color => color.classList.remove('selected'));
+      e.currentTarget.classList.add('selected');
+    });
+  });
+
+  const quantityButton = document.querySelector('.quantity');
+  const amountSpan = quantityButton.querySelector('.amount');
+  const increase = quantityButton.querySelector('.increase');
+  const decrease = quantityButton.querySelector('.decrease');
+
+  increase.addEventListener('click', (e) => {
+    e.preventDefault();
+    let amount = parseInt(amountSpan.textContent);
+    amount++;
+    amountSpan.textContent = amount;
+  });
+
+  decrease.addEventListener('click', (e) => {
+    e.preventDefault();
+    let amount = parseInt(amountSpan.textContent);
+    if (amount > 1) {
+      amount--;
+      amountSpan.textContent = amount;
+    }
+  });
 </script>
 
 </html>
-
-
-
-
-
-
-
