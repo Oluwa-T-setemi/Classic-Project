@@ -127,7 +127,7 @@
     .buy_now, .cart{
         padding: 8px 25px;
         cursor: pointer;
-        border: none;
+        border: thin solid transparent;
         background-color: rgb(4, 125, 4);
         color: white;
     }
@@ -138,7 +138,7 @@
     .buy_now:hover, .cart:hover{
         background-color: white;
         color: rgb(4, 125, 4);
-        box-shadow: 0 0 10px rgb(4, 125, 4) ;
+        border: thin solid rgba(59, 198, 112, 0.844);
     }
     label{
         font-size: 16px;
@@ -168,7 +168,7 @@
   <header>
     <nav>
       <div class="top-nav">
-        <div class="inner-nav">
+        <div class="inner-nav" id="top">
           <p><i class="fas fa-phone"></i> +001234567890</p>
           <p>Get 50% Off on Selected items <span class="seperator">|</span> Shop Now</p>
           <ul>
@@ -640,6 +640,11 @@
 
 
 </footer>
+
+<a href="#top">
+  <div class="scroll-up">
+  <i class="fa-solid fa-arrow-up"></i>
+</div>
 
 </body>
 <script>
