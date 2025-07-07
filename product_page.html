@@ -654,7 +654,8 @@
   const dropdown = document.querySelector('.categories');
   const account = document.querySelector('#account');
   const accountsDropdown = document.querySelector('.accounts');
-  const bars = document.querySelector('.fa-bars')
+  const bars = document.querySelector('.fa-bars');
+  const buyNow = document.querySelector('.buy_now');
 
   if (form && otherLinks) {
     form.addEventListener('focusin', () => {
@@ -716,6 +717,10 @@
       amount--;
       amountSpan.textContent = amount;
     }
+  });
+  buyNow.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'checkout.html';
   });
 </script>
 
