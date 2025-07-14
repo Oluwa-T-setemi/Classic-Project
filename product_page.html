@@ -459,6 +459,8 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- import config -->
+<script src="./config.js"></script>
 <script>
   const form = document.querySelector('form');
   const otherLinks = document.querySelectorAll('.other-links');
@@ -475,7 +477,7 @@
 
   if(productId) {
     // use hisend api
-    axios.get(`https://core.hisend.hunnovate.com/api/v1/projects/shop_cart/tables/products/records/${productId}?api_key=7cLG41V6vQV19gDy9w2ERhRx`)
+    axios.get(`${CONFIG.API_BASE_URL}/${CONFIG.PROJECT_ID}/tables/products/records/${productId}?api_key=${CONFIG.API_KEY}`)
       .then(response => {
         const product = response.data.data;
         console.log(product);
@@ -493,7 +495,7 @@
       });
   }
 
-  const getResponse = axios.get("https://core.hisend.hunnovate.com/api/v1/projects/shop_cart/tables/products/records?api_key=7cLG41V6vQV19gDy9w2ERhRx")
+  const getResponse = axios.get(`${CONFIG.API_BASE_URL}/${CONFIG.PROJECT_ID}/tables/products/records?api_key=${CONFIG.API_KEY}`)
     .then(response => {
       const productDetails = response.data.data;
       console.log(productDetails);

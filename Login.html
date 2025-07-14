@@ -263,6 +263,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!---- sweetalert cdn ---->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- import config -->
+    <script src="./config.js"></script>
 
     <script>
       const form = document.getElementById("signup-form");
@@ -314,7 +316,7 @@
 
         axios
           .post(
-            "https://core.hisend.hunnovate.com/api/v1/projects/shop_cart/auth/login?api_key=7cLG41V6vQV19gDy9w2ERhRx",
+            `${CONFIG.API_BASE_URL}/${CONFIG.PROJECT_ID}/auth/login?api_key=${CONFIG.API_KEY}`,
             data
           )
           .then((response) => {
