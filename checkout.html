@@ -96,8 +96,8 @@
       font-weight: 400;
     }
     .details-price {
-      width: 30%;
       text-align: end;
+      width: 30%;
       font-weight: 600;
       font-size: 18px;
     }
@@ -436,14 +436,13 @@
           <h1>Review Item and Shipping</h1>
           <div class="name">
             <div>
-              <img src="/Images/Tech_items/dj_headphones_0ne.webp" alt="" />
-              <p>
-                Wireless DJ Headphones <br />
-                <span>Color: Silver</span>
+              <img src="" alt="" />
+              <p class="name">
               </p>
             </div>
             <p class="details-price">
-              &#8358;00.00 <br /><span>Quantity: 01</span>
+              &#8358;00.00 <br>
+              <span>Quantity: 01</span>
             </p>
           </div>
         </div>
@@ -539,22 +538,22 @@
         <div class="payment-checkout">
           <div class="transaction-details">
             <p>Subtotal</p>
-            <p>&#8358;00.00</p>
+            <p class="amount">&#8358;00.00</p>
           </div>
 
           <div class="transaction-details">
             <p>Tax</p>
-            <p>&#8358;00.00</p>
+            <p class="tax">&#8358;00.00</p>
           </div>
 
           <div class="transaction-details">
             <p>Shipping Cost</p>
-            <p>&#8358;00.00</p>
+            <p class="shipping">&#8358;00.00</p>
           </div>
 
           <div class="transaction-details">
             <p>Total</p>
-            <p>&#8358;00.00</p>
+            <p class="total">&#8358;00.00</p>
           </div>
 
           <button type="submit" class="checkout-btn">Pay &#8358;00.00</button>
@@ -642,6 +641,7 @@
   <i class="fa-solid fa-arrow-up"></i>
 </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     const form = document.querySelector("form");
     const otherLinks = document.querySelectorAll(".other-links");
@@ -651,6 +651,33 @@
     const accountsDropdown = document.querySelector(".accounts");
     const bars = document.querySelector(".fa-bars");
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+    if(productId) {
+      // use hisend api
+      axios.get(`https://core.hisend.hunnovate.com/api/v1/projects/shop_cart/tables/products/records/${productId}?api_key=7cLG41V6vQV19gDy9w2ERhRx`)
+        .then(response => {
+          const product = response.data.data;
+          console.log(product);
+          const price  = product.price.toLocaleString().replace(/,/g, '');
+          product.price = parseFloat(price);
+          document.querySelector('.name img').src = product.image;
+          document.querySelector('.name p').textContent = product.name;
+          document.querySelector('.details-price').textContent = `₦${product.price.toLocaleString()} \n Quantity: ${product.quantity}`;
+          document.querySelector('.amount').textContent = `₦${product.price.toLocaleString()}`;
+          document.querySelector('.tax').textContent = `₦${(parseFloat(product.price) * 0.1).toLocaleString()}`;
+          document.querySelector('.shipping').textContent = `₦${(parseFloat(product.price) * 0.05).toLocaleString()}`;
+          document.querySelector('.total').textContent = `₦${(parseFloat(product.price) * 1.15).toLocaleString()}`;
+          document.querySelector('.checkout-btn').textContent = `Pay ₦${(parseFloat(product.price) * 1.15).toLocaleString()}`;
+        })
+        .catch(error => {
+          console.error('Error fetching product data:', error);
+        });
+    }
+
+
+    
     if (form && otherLinks) {
       form.addEventListener("focusin", () => {
         otherLinks.forEach((link) => (link.style.display = "none"));
