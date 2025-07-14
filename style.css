@@ -304,6 +304,17 @@ input:checked+label .fa-chevron-down {
   color: rgb(4, 125, 4);
 }
 
+.search-results h1{
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 20px;
+  height: 100px;
+  display: flex;
+  justify-content: 
+  center;
+  align-items: center;
+}
+
 .result {
   width: 100%;
   display: flex;
