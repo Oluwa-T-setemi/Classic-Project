@@ -833,9 +833,13 @@ footer {
   justify-content: space-around;
   align-items: center;
   font-family: "Kumbh Sans", sans-serif;
-  font-size: 20px;
+  /* font-size: 20px; */
   color: rgb(4, 125, 4);
   font-weight: 600;
+}
+
+.main-ol li{
+   font-size: 20px;
 }
 
 .main-ol li ol {
@@ -1222,11 +1226,13 @@ hr {
   footer {
     margin-top: 120px;
     z-index: 999;
+    height: fit-content;
+    padding-bottom: 20px;
   }
 
   .my-svg {
     width: 80%;
-    top: -14%;
+    top: -8%;
     left: 0;
   }
 
@@ -1239,17 +1245,24 @@ hr {
   .main-ol li {
     width: 100%;
     text-align: center;
+    margin-top: 20px;
   }
 
   .main-ol li ol {
     width: 100%;
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    margin: 0 auto;
     justify-content: center;
+    align-items: center;
+    width: fit-content;
+     margin-top: 0px;
+    /* background-color: yellow; */
   }
 
   .main-ol li ol li {
-    width: 50%;
+    width: fit-content;
     text-align: center;
   }
 
@@ -1257,5 +1270,15 @@ hr {
     width: 100%;
     justify-content: center;
     margin-left: 0px;
+  }
+  .main-ol li:nth-child(4) ol{
+    flex-direction: row;
+  }
+  .connect{
+    text-align: center;
+  }
+  .social_links{
+    display: flex;
+    align-items: center;
   }
 }
