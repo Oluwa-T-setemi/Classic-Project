@@ -723,12 +723,12 @@
         document.querySelector('.name img').src = product.image;
         document.querySelector('.name p').textContent = product.name;
         document.querySelector('.current-page').textContent = product.name;
-        document.querySelector('.details-price').textContent = `₦${product.price.toFixed(2)} \n Quantity: ${qty}`;
-        document.querySelector('.amount').textContent = `₦${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        document.querySelector('.tax').textContent = `₦${tax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        document.querySelector('.shipping').textContent = `₦${shipping.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        document.querySelector('.total').textContent = `₦${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        document.querySelector('.checkout-btn').textContent = `Pay ₦${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        document.querySelector('.details-price').textContent = `₦ ${product.price.toFixed(2)} \n Quantity: ${qty}`;
+        document.querySelector('.amount').textContent = `₦ ${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        document.querySelector('.tax').textContent = `₦ ${tax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        document.querySelector('.shipping').textContent = `₦ ${shipping.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        document.querySelector('.total').textContent = `₦ ${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        document.querySelector('.checkout-btn').textContent = `Pay ₦ ${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
       })
       .catch(error => {
