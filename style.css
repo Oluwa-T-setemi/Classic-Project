@@ -466,7 +466,7 @@ input:checked+label .fa-chevron-down {
   background-color: 90%;
   display: flex;
   justify-content: center;
-  background: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+  background-color: rgb(229, 212, 212);
   border-bottom-left-radius: 80px;
   background-position: center;
   font-family: "Kumbh Sans", sans-serif;
@@ -489,7 +489,7 @@ input:checked+label .fa-chevron-down {
   position: absolute;
   width: 50%;
   height: 4px;
-  background: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+  background-color: white;
   top: 110%;
   left: 25%;
   border-radius: 30px;
@@ -749,13 +749,17 @@ input:checked+label .fa-chevron-down {
 }
 
 .cards {
-  cursor: pointer;
   padding: 10px;
   transition: transform 0.3s ease;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+  flex-direction: column; 
+}
+
+.cards .price{
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .cards img {
@@ -763,7 +767,6 @@ input:checked+label .fa-chevron-down {
 }
 
 .cards:hover {
-  transform: scale(1.08);
   background-color: whitesmoke;
   box-shadow: 0 0 10px #b9b9b9;
 }
@@ -788,24 +791,30 @@ input:checked+label .fa-chevron-down {
 }
 
 .cards button {
-  width: 80%;
-  margin: 10px auto;
+  width: 60%;
+  margin: 10px 0;
   border: none;
-  padding: 8px;
+  padding: 8px 12px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 5px;
   border-radius: 20px;
+  border: thin solid rgb(4, 125, 4);
+  color: rgb(4, 125, 4);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+.cards button:hover {
   background-color: rgb(4, 125, 4);
   color: white;
-  font-family: "Kumbh Sans", sans-serif;
 }
 
 footer {
   width: 100%;
   height: 40vh;
-  background: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+  background-color: #cdc4c4;
   position: relative;
   z-index: 999;
   margin-top: 220px;
@@ -818,10 +827,9 @@ footer {
 
 .my-svg {
   width: 80%;
-  color: rgb(4, 125, 4);
   position: absolute;
   top: -60%;
-  z-index: 99;
+  z-index: 1;
   left: 10%;
 }
 
@@ -1206,7 +1214,13 @@ hr {
   }
 
   .cards button {
-    width: 100%;
+    width: 80%;
+    margin: 10px auto;
+    justify-content: center;
+  }
+  .cards button .fa-cart-plus{
+    color: rgb(4, 125, 4);
+    display: inline;
   }
 
   .cards:hover {
@@ -1216,10 +1230,6 @@ hr {
   }
 
   .search-form {
-    display: none;
-  }
-
-  .fa-cart-plus {
     display: none;
   }
 

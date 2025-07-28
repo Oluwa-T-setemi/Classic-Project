@@ -19,11 +19,11 @@ const jsonToHisendMap = {
 
 const categoryMap = {
   furniture: "furniture",
-  laptops: "tech-items",
-  smartphones: "tech-items",
+  laptops: "tech_items",
+  smartphones: "tech_items",
   "mens-shoes": "shoes",
   "womens-shoes": "shoes",
-  tablets: "tech-items",
+  tablets: "tech_items",
   "women-bags": "bags",
 };
 
