@@ -138,7 +138,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="/sub_categories.html?category=electronics" id="category-link" target="_blank">
+                    <a href="/sub_categories.html?category=tech_items" id="category-link" target="_blank">
                       <img
                         src="/images/dropdown_keyboard.webp"
                         alt="Techs"
@@ -426,7 +426,7 @@
               <li>Return and Refund Policy</li>
               <li>Intellectual Property</li>
               <li>Shipping Info</li>
-              <li>Terms of Service</li>
+              <li>Terms of Service</li>       
             </ol>
           </li>
           <li>
@@ -501,7 +501,7 @@
 
         timerId = window.setTimeout(() => {
           handleSearchAndResult(search);
-        }, 500); // Delay of 500ms before making the API call
+        }, 500);
       } else {
         searchResults.style.display = "none";
         searchDropdown.style.display = "block";
@@ -529,7 +529,29 @@
             <span class="review">★★★★☆</span>
             <span class="price" id="price">₦ ${product.price}</span>
           `;
+            result.style.cursor = "pointer";
+            result.style.display = "flex";
+            result.style.justifyContent = "space-between";
+            result.style.alignItems = "center";
+            result.style.padding = "10px";
+            result.style.borderBottom = "1px solid #ccc";
+            result.style.backgroundColor = "#f9f9f9";
+            result.style.borderRadius = "5px";
+            result.style.marginBottom = "10px";
+            result.style.transition = "background-color 0.3s";
+            result.addEventListener("mouseover", () => {
+              result.style.backgroundColor = "#e0e0e0";
+            });
+            result.addEventListener("mouseout", () => {
+              result.style.backgroundColor = "#f9f9f9";
+            });
+            const productInfo = result.querySelector(".product-info");
+            productInfo.style.display = "flex";
+            productInfo.style.alignItems = "center";
             searchResults.appendChild(result);
+            result.addEventListener("click", () => {
+              window.location.href = "/product_page.html?id=" + product.id;
+            });
           });
         })
         .catch((error) => {
@@ -537,12 +559,12 @@
         });
     }
 
-    // Toggle search dropdown on focus
     searchForm.addEventListener("focusin", () => {
       searchDropdown.style.display = "block";
     });
     searchForm.addEventListener("focusout", () => {
       searchDropdown.style.display = "none";
+      searchResults.style.display = "none"; // Hide results when focus is lost
     });
 
     if (form && otherLinks) {
@@ -551,6 +573,65 @@
       });
       form.addEventListener("focusout", () => {
         otherLinks.forEach((link) => (link.style.display = ""));
+      });
+    }
+    if (bars) {
+      bars.addEventListener("click", () => {
+        const innerNav = document.querySelector(".inner-nav");
+        innerNav.classList.toggle("active");
+        bars.classList.toggle("active");
+      });
+    }
+    if (bars) {
+      bars.addEventListener("click", () => {
+        const header = document.querySelector("header");
+        header.classList.toggle("active");
+      });
+    }
+    if (categories) {
+      categories.addEventListener("change", () => {
+        const categoriesMenu = document.querySelector("#categories-menu");
+        categoriesMenu.style.display = categories.checked ? "block" : "none";
+      });
+    }
+    // Toggle dropdown visibility based on checkbox state
+    if (dropdown) {
+      dropdown.style.display = "none"; // Initially hide the dropdown
+    }
+    if (accountsDropdown) {
+      accountsDropdown.style.display = "none"; // Initially hide the accounts dropdown
+    }
+    // Add event listeners to toggle dropdown visibility
+    if (dropdown) {
+      dropdown.addEventListener("change", () => {
+        dropdown.style.display = dropdown.checked ? "grid" : "none";
+      });
+    }
+    if (accountsDropdown) {
+      accountsDropdown.addEventListener("change", () => {
+        accountsDropdown.style.display = accountsDropdown.checked ? "flex" : "none";
+      });
+    }
+    // Add event listeners to toggle dropdown visibility based on checkbox state
+    if (dropdown) {
+      dropdown.addEventListener("change", () => {
+        dropdown.style.display = dropdown.checked ? "grid" : "none";
+      });
+    }
+    if (accountsDropdown) {
+      accountsDropdown.addEventListener("change", () => {
+        accountsDropdown.style.display = accountsDropdown.checked ? "flex" : "none";
+      });
+    }
+    // Add event listeners to toggle dropdown visibility based on checkbox state
+    if (categories && dropdown) {
+      categories.addEventListener("change", () => {
+        dropdown.style.display = categories.checked ? "grid" : "none";
+      });
+    }
+    if (account && accountsDropdown) {
+      account.addEventListener("change", () => {
+        accountsDropdown.style.display = account.checked ? "flex" : "none";
       });
     }
 
@@ -587,7 +668,7 @@
           card.innerHTML = `
             <img src="${product.image}" alt="">
             <p class="item-name">${product.name}</p>
-            <p class="price">₦ ${product.price}</p>
+            <p cla>&#8358 ${product.price}</p>
             <span>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -617,5 +698,38 @@
       .catch((error) => {
         console.error("Error fetching product images:", error);
       });
+
+      document.querySelector(".search-form").addEventListener("submit", function (e) {
+  e.preventDefault(); // Stop default form submission
+
+  const searchValue = document
+    .querySelector(".search-form input")
+    .value.trim()
+    .toLowerCase();
+
+  const categories = document.querySelectorAll(".search-category p");
+
+  let found = false;
+
+  categories.forEach((category) => {
+    const categoryText = category.textContent.toLowerCase();
+    if (categoryText.includes(searchValue)) {
+      category.parentElement.parentElement.style.display = "block";
+      found = true;
+    } else {
+      category.parentElement.parentElement.style.display = "none";
+    }
+  });
+
+  document.querySelector(".search-dropdown").style.display = "block";
+
+  // Toggle visibility of search results
+  const resultBox = document.querySelector(".search-results");
+  if (found) {
+    resultBox.innerHTML = ""; // Clear "Product Not Found!" if match is found
+  } else {
+    resultBox.innerHTML = "<h1>Product Not Found!</h1>";
+  }
+});
   </script>
 </html>
